@@ -1,0 +1,404 @@
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>PLACE {{type}} QUOTE</h5>
+                </div>
+
+                <form class="form theme-form" #myForm="ngForm" (ngSubmit)="submitForm(myForm.value)">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group mb-6">
+                                    <label for="exampleFormControlSelect31"> <b>Select Quote</b></label>
+                                    <select class="form-control form-control-sm digits" name="quoteType" ngModel
+                                        id="exampleFormControlSelect31" (change)="selectType($event)">
+                                        <option value="" selected>Select type</option>
+                                        <option value="digitizing">Digitization</option>
+                                        <option value="vector">Vector</option>
+                                        <option value="patch">Patch</option>
+                                    </select>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- digitizing -->
+                    <div class="card-body" *ngIf="type === 'digitizing'">
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput10">Design Name*</label>
+                                    <input type="text" class="form-control btn-square" id="exampleFormControlInput10"
+                                        placeholder="Design Name*" name="name" ngModel>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputH11">Height (inches)</label>
+                                    <input type="text" class="form-control btn-square" id="exampleInputH11"
+                                        placeholder="Height (inches)" name="height" ngModel>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputW11">Width (inches)</label>
+                                    <input type="text" class="form-control btn-square" id="exampleInputW11"
+                                        placeholder="Width (inches)" name="width" ngModel>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect12">Select Design Placement</label>
+                                    <select class="form-control btn-square digits" id="exampleFormControlSelect12" name="placement" ngModel>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect12">File Format Required</label>
+                                    <select class="form-control btn-square digits" id="exampleFormControlSelect12" name="format" ngModel>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group mb-0">
+                                    <label for="exampleFormControlTextarea14">Quote Instructions</label>
+                                    <textarea class="form-control btn-square" id="exampleFormControlTextarea14" rows="3"
+                                        placeholder="Quote Instructions" name="instruction" ngModel></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group me-1">
+                                    <div class="checkbox checkbox-dark m-squar pt-4">
+                                        <input id="inline-sqr-1" type="checkbox" name="urgent" ngModel>
+                                        <label for="inline-sqr-1" class="mt-0">This Quote is Super Urgent</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col">
+
+
+                                <ngx-dropzone (change)="onSelect2($event)" [multiple]="true"
+                                    class="dropzone dropzone-secondary">
+                                    <ngx-dropzone-label>
+                                        <div class="dz-message needsclick"><i class="icon-cloud-up"></i>
+                                            <h4 class="f-w-700">Drop files here or click to upload.</h4>
+                                        </div>
+                                    </ngx-dropzone-label>
+                                    <ngx-dropzone-preview *ngFor="let f of files2" [removable]="true"
+                                        (removed)="onRemove2(f)">
+                                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                    </ngx-dropzone-preview>
+                                </ngx-dropzone>
+
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+                    <!-- Patch -->
+                    <div class="card-body" *ngIf="type === 'patch'">
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput10">Design Name*</label>
+                                    <input type="text" class="form-control btn-square" id="exampleFormControlInput10"
+                                        placeholder="Design Name*" name="name" ngModel>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput10">Purchase Order Number*</label>
+                                    <input type="text" class="form-control btn-square" id="exampleFormControlInput10"
+                                        placeholder="Purchase Order Number*" name="po" ngModel>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput10">Quantity</label>
+                                    <input type="text" name="qty" class="form-control btn-square"
+                                        id="exampleFormControlInputQuantity" placeholder="Quantity" name="qty" ngModel>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputH11">Height (inches)</label>
+                                    <input type="text" class="form-control btn-square" id="exampleInputH11"
+                                        placeholder="Height (inches)" name="height" ngModel>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputW11">Width (inches)</label>
+                                    <input type="text" class="form-control btn-square" id="exampleInputW11"
+                                        placeholder="Width (inches)" name="width" ngModel>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="Backing">Backing</label>
+                                    <select name="type" class="form-control btn-square digits" id="Backing" name="backing" ngModel>
+                                        <option>Select Type</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect12Placement">Select Design Placement</label>
+                                    <select class="form-control btn-square digits"
+                                        id="exampleFormControlSelect12Placement" name="placement" ngModel>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlMerrow">Merrow Border</label>
+                                    <select class="form-control btn-square digits" id="exampleFormControlMerrow" name="merrowBorder" ngModel>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputH11Colors">No of Colors</label>
+                                    <input type="number" class="form-control btn-square" id="exampleInputH11Colors"
+                                        placeholder="No of Colors" name="color" ngModel>
+                                </div>
+
+                            </div>
+
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControFabric">Fabric</label>
+                                    <select name="fabric" class="form-control btn-square digits"
+                                        id="exampleFormControFabric" name="fabric" ngModel>
+                                        <option>Fabric</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group mb-0">
+                                    <label for="exampleFormControlTextarea14">Quote Instructions</label>
+                                    <textarea class="form-control btn-square" id="exampleFormControlTextarea14" rows="3"
+                                        placeholder="Quote Instructions" name="instruction" ngModel></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group mb-0">
+                                    <label for="exampleFormControlTextarea14">Shipping Address (Optional)</label>
+                                    <textarea name="shippingaddress" class="form-control btn-square"
+                                        id="exampleFormControlTextarea14" rows="3"
+                                        placeholder="Shipping Address (Optional)" name="shippingAddress" ngModel></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group me-1">
+                                    <div class="checkbox checkbox-dark m-squar pt-4">
+                                        <input id="inline-sqr-1" type="checkbox" name="urgent" ngModel>
+                                        <label for="inline-sqr-1" class="mt-0">This Quote is Super Urgent</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col">
+
+
+                                <ngx-dropzone (change)="onSelect2($event)" [multiple]="true"
+                                    class="dropzone dropzone-secondary">
+                                    <ngx-dropzone-label>
+                                        <div class="dz-message needsclick"><i class="icon-cloud-up"></i>
+                                            <h4 class="f-w-700">Drop files here or click to upload.</h4>
+                                        </div>
+                                    </ngx-dropzone-label>
+                                    <ngx-dropzone-preview *ngFor="let f of files2" [removable]="true"
+                                        (removed)="onRemove2(f)">
+                                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                    </ngx-dropzone-preview>
+                                </ngx-dropzone>
+
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+
+                    <!-- vector -->
+                    <div class="card-body" *ngIf="type === 'vector'">
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput10">Vector Name*</label>
+                                    <input type="text" class="form-control btn-square" id="exampleFormControlInput10"
+                                        placeholder="Vector Quote Name*" name="name" ngModel>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group mb-0">
+                                    <label for="exampleFormControlTextarea14">Quote Instructions</label>
+                                    <textarea class="form-control btn-square" id="exampleFormControlTextarea14" rows="3"
+                                        placeholder="Quote Instructions" name="instruction" ngModel></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group me-1">
+                                    <div class="checkbox checkbox-dark m-squar pt-4">
+                                        <input id="inline-sqr-1" type="checkbox" name="urgent" ngModel>
+                                        <label for="inline-sqr-1" class="mt-0">This Quote is Super Urgent</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col">
+
+
+                                <ngx-dropzone (change)="onSelect2($event)" [multiple]="true"
+                                    class="dropzone dropzone-secondary">
+                                    <ngx-dropzone-label>
+                                        <div class="dz-message needsclick"><i class="icon-cloud-up"></i>
+                                            <h4 class="f-w-700">Drop files here or click to upload.</h4>
+                                        </div>
+                                    </ngx-dropzone-label>
+                                    <ngx-dropzone-preview *ngFor="let f of files2" [removable]="true"
+                                        (removed)="onRemove2(f)">
+                                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                    </ngx-dropzone-preview>
+                                </ngx-dropzone>
+
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary me-1">Submit</button>
+                        <input type="reset" class="btn btn-light" value="Cancel">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends -->

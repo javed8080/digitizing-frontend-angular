@@ -1,0 +1,122 @@
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>QUOTES List</h5>
+
+                    <div class="col-12">
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect31"> <b>Select Quote</b></label>
+                                    <select class="form-control" name="quoteType" ngModel
+                                        id="exampleFormControlSelect31" (change)="selectType($event)">
+                                        <option value="" selected>Select type</option>
+                                        <option value="digitizing">Digitization</option>
+                                        <option value="vector">Vector</option>
+                                        <option value="patch">Patch</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput10">Design Name*</label>
+                                    <input type="text" class="form-control btn-square" id="exampleFormControlInput10"
+                                        placeholder="Design Name*" name="name" [(ngModel)]="searchText"
+                                        (input)="search()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body custom-datatable noscroll">
+                    <h3>DIGITIZING QUOTES RECORDS</h3><br>
+                    <div class="custom-datatable">
+                        <table class="table table-striped bg-primary">
+                            <thead>
+                                <tr>
+                                    <th scope="col" sortable="name" *ngFor="let col of columns "
+                                        (sort)="onSort($event)">{{col.name}}</th>
+                                    <th scope="col">Quote Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of tableItem ">
+                                    <ng-container *ngFor="let col of columns">
+                                        <td scope="row" *ngIf="col.prop !== 'date'; else dateColumn">
+                                            {{ item[col.prop] }}
+                                        </td>
+                                        <ng-template #dateColumn>
+                                            <td scope="row">
+                                                {{ item[col.prop] | date:'yyyy-MM-dd HH:mm:ss' }}
+                                            </td>
+                                        </ng-template>
+                                    </ng-container>
+
+                                    <td>
+                                        <button (click)="onSelect(item.name)"><i class="fa fa-eye"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-between p-2">
+                            <ngb-pagination [collectionSize]="(total)!" [(page)]="service.page"
+                                [pageSize]="service.pageSize">
+                            </ngb-pagination>
+                        </div>
+                    </div>
+
+                    <!-- <ngx-datatable class="table" [rows]="data" [columnMode]="'force'" [headerHeight]="50"
+                            [footerHeight]="50" [rowHeight]="'auto'" [externalPaging]="true" [count]="data.length"
+                            [offset]="0" [limit]="10" (page)="onPage($event)">
+                            
+                            <ngx-datatable-column name="S.N" prop="name"></ngx-datatable-column>
+                            <ngx-datatable-column name="Quote No" prop="quoteNo"></ngx-datatable-column>
+                            <ngx-datatable-column name="Quote Name" prop="quoteName"></ngx-datatable-column>
+
+                            <ngx-datatable-column name="Custom Search" [sortable]="false">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                    <input class="table" placeholder="Search..." (input)="updateFilter($event)" />
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable> -->
+
+                    <!-- quote-list.component.html -->
+
+                    <!-- quote-list.component.html -->
+
+
+                    <!-- <ngx-datatable class="table" [rows]="data" [columnMode]="'force'" [columns]="columns"
+                            [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [externalPaging]="true"
+                            [count]="data.length" [offset]="0" [limit]="10" [sortType]="SortType.multi"
+                            (page)="onPage($event)" (sort)="onSort($event)">
+                            <ng-container *ngIf="columns">
+                                <ngx-datatable-column *ngFor="let column of columns" [name]="column?.name || ''"
+                                    [prop]="column?.prop" [sortable]="true">
+                                    <ng-template let-column="column" ngx-datatable-header-template>
+                                        {{ column?.name }}
+                                    </ng-template>
+                                    <ng-template let-value="value" ngx-datatable-cell-template>
+                                        {{ value }}
+                                    </ng-template>
+                                </ngx-datatable-column>
+                            </ng-container>
+                        </ngx-datatable> -->
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends -->

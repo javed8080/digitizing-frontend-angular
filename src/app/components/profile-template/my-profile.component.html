@@ -1,0 +1,206 @@
+<div class="container-fluid">
+    <div class="edit-profile">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title mb-0 custHeading text-center" >My Profile</h5>
+              <div class="card-options"><a class="card-options-collapse" [routerLink]="[]" data-bs-toggle="card-collapse"><i
+                    class="fe fe-chevron-up"></i></a><a class="card-options-remove" [routerLink]="[]"
+                  data-bs-toggle="card-remove"><i class="fe fe-x"></i></a></div>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="row mb-2">
+                  <div class="col-auto"><img class="img-70 rounded-circle" alt="" src="assets/images/user/7.jpg"></div>
+                  <div class="col">
+                    <h3 class="mb-1">Kabeer Khan</h3>
+                    <p class="mb-4">COMPANY: E-Digit</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label font-weight-bold">Phone:</label>&nbsp;&nbsp;&nbsp;
+                  <label class="form-label">03451234567</label>
+                  
+                  <!-- <input class="form-control" type="text" value="03451234567" disabled> -->
+                </div>
+                <div class="form-group">
+                  <label class="form-label font-weight-bold">Email-Address:</label>&nbsp;&nbsp;&nbsp;
+                  <label class="form-label">kabeer_jadoon&#64;live.com</label>
+                    <!-- <input class="form-control" placeholder="kabeer_jadoon@live.com" disabled> -->
+                </div>
+                <hr>
+                <div class="form-group text-center">
+                    <label class="form-label font-weight-bold">Florida</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="form-label font-weight-bold">999991</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="form-label font-weight-bold">US</label><br>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label class="form-label font-weight-bold">Cell-Number</label>&nbsp;&nbsp;&nbsp;
+                    <label class="form-label">03451234567</label>
+                </div>
+                <div class="form-group">
+                    <label class="form-label font-weight-bold">Email-2</label>&nbsp;&nbsp;&nbsp;
+                    <label class="form-label">kabeer_jadoon&#64;live.com</label>
+                    <!-- <input class="form-control" value="kabeer_jadoon2@live.com" disabled> -->
+                </div>
+                <div class="form-group">
+                  <label class="form-label font-weight-bold">Email-3</label>&nbsp;&nbsp;&nbsp;
+                  <label class="form-label">kabeer_jadoon&#64;live.com</label>
+                </div>
+                <div class="form-group">
+                  <label class="form-label font-weight-bold">Email (Billing)</label>&nbsp;&nbsp;&nbsp;
+                  <label class="form-label">kabeer_jadoon&#64;live.com</label>
+                </div>
+                <div class="form-group">
+                  <label class="form-label font-weight-bold">Website</label>&nbsp;&nbsp;&nbsp;
+                  <label class="form-label">kabeerlive.com</label>
+                </div>
+                <div class="form-group">
+                  <label class="form-label font-weight-bold">Company Type</label>&nbsp;&nbsp;&nbsp;
+                  <label class="form-label">E Digit</label>
+                </div>
+                <div class="form-group">
+                  <label class="form-label font-weight-bold">Embroidery</label>&nbsp;&nbsp;&nbsp;
+                  <label class="form-label">Test Embroidery</label>
+                </div>
+                <!-- <div class="form-footer">
+                  <button class="btn btn-primary btn-block">Save</button>
+                </div> -->
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <form class="card">
+            <div class="card-header">
+              <h4 class="card-title mb-0 custHeading text-center">Update Business Details</h4>
+              <div class="card-options"><a class="card-options-collapse" [routerLink]="[]" data-bs-toggle="card-collapse"><i
+                    class="fe fe-chevron-up"></i></a><a class="card-options-remove" [routerLink]="[]"
+                  data-bs-toggle="card-remove"><i class="fe fe-x"></i></a></div>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-12 text-center">
+                  <hr><h5>Personal</h5><hr>
+                </div>
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input class="form-control" type="text" placeholder="Name" value="Kabeer Khan">
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                  <div class="form-group">
+                    <label class="form-label">Company Name</label>
+                    <input class="form-control" type="text" placeholder="Compant-name" value="E-digit">
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <div class="form-group">
+                    <label class="form-label">Website</label>
+                    <input class="form-control" type="text" placeholder="website" value="kabeerlive.com">
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <div class="form-group">
+                      <label class="form-label">Company Type</label>
+                          <select class="form-select" aria-label="Default select example" >
+                            <option value="0">Apparel Inc</option>
+                            <option value="1">Boutique </option>
+                            <option value="2">Digitizing Company</option>
+                          </select>
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                  <div class="col-lg-12 text-center">
+                    <hr><h5>Address</h5><hr>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="form-label">Country</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option value="0">Select Country</option>
+                      <option value="1">Germany</option>
+                      <option value="2">Canada</option>
+                      <option value="3">Usa</option>
+                      <option value="4">Aus</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="form-label">State</label>
+                    <!-- <div class="text-center">
+                      <label class="form-label font-weight-bold">Current State : </label><span>Florida</span>
+                    </div> -->
+                        <select class="form-select" aria-label="Default select example" >
+                          <option value="0">Select State</option>
+                          <option value="1">New York</option>
+                          <option value="2">Chicago</option>
+                        </select>
+                  </div>
+                </div>
+                  
+                
+                <div class="col-sm-6 col-md-12">
+                  <div class="form-group">
+                    <label class="form-label">Address</label>
+                    <input class="form-control" type="text" placeholder="address" value="Johor-mor, karachi">
+                  </div>
+                </div>
+                
+                <div class="Email-section row">
+                  <div class="col-lg-12 text-center">
+                    <hr><h5>Contact Details</h5><hr>
+                  </div>
+                  <div class="col-sm-4 col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Phone</label>
+                      <input class="form-control" type="text" placeholder="Phone" value="03451234567">
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Email</label>
+                      <input class="form-control" type="text" placeholder="Email" value="kabeer_jadoon@live.com">
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Email For Billing</label>
+                      <input class="form-control" type="text" placeholder="email_billing" value="kabeer@live.com">
+                    </div>
+                  </div>
+                  <div class="col-sm-3 col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Email 2</label>
+                      <input class="form-control" type="text" placeholder="email2" value="kabeer_jadoon2@live.com">
+                    </div>
+                  </div>
+                  <div class="col-sm-3 col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Email 3</label>
+                      <input class="form-control" type="text" placeholder="email3" value="kabeer_jadoon3@live.com">
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                  
+                  
+              </div>
+            </div>
+            <div class="card-footer text-end">
+              <button class="btn btn-primary" type="submit">Update Profile</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+

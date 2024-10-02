@@ -1,0 +1,203 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header"><h5>ADD EMBROIDERY</h5></div>
+        <form novalidate="" class="form theme-form ng-valid ng-touched ng-dirty" >
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <div class="form-group mb-6">
+                  <label for="exampleFormControlSelect31"
+                    ><b>Select Quote</b></label>
+                    <select
+                    name="quoteType"
+                    ngmodel=""
+                    id="exampleFormControlSelect31"
+                    class="form-control form-control-sm digits ng-valid ng-touched ng-dirty"
+                    ng-reflect-name="quoteType"
+                    ng-reflect-model="">
+                    <option value="" selected="" ng-reflect-value="">
+                      Select type
+                    </option>
+                    <option value="digitizing" ng-reflect-value="digitizing">
+                      Digitization
+                    </option>
+                    <option value="vector" ng-reflect-value="vector">
+                      Vector
+                    </option>
+                    <option value="patch" ng-reflect-value="patch">
+                      Patch
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body ng-star-inserted">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="exampleFormControlInput10">Design Name*</label
+                  ><input
+                    type="text"
+                    id="exampleFormControlInput10"
+                    placeholder="Design Name*"
+                    name="name"
+                    ngmodel=""
+                    class="form-control btn-square ng-untouched ng-pristine ng-valid"
+                    ng-reflect-name="name"
+                    ng-reflect-model=""/>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="exampleInputH11">Height (inches)</label>
+                  <input
+                    type="text"
+                    id="exampleInputH11"
+                    placeholder="Height (inches)"
+                    name="height"
+                    ngmodel=""
+                    class="form-control btn-square ng-untouched ng-pristine ng-valid"
+                    ng-reflect-name="height"
+                    ng-reflect-model=""/>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="exampleInputW11">Width (inches)</label>
+                  <input
+                    type="text"
+                    id="exampleInputW11"
+                    placeholder="Width (inches)"
+                    name="width"
+                    ngmodel=""
+                    class="form-control btn-square ng-untouched ng-pristine ng-valid"
+                    ng-reflect-name="width"
+                    ng-reflect-model="" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="exampleFormControlSelect12">Select Design Placement</label>
+                  <select
+                    id="exampleFormControlSelect12"
+                    name="placement"
+                    ngmodel=""
+                    class="form-control btn-square digits ng-untouched ng-pristine ng-valid"
+                    ng-reflect-name="placement"
+                    ng-reflect-model="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="exampleFormControlSelect12"
+                    >File Format Required</label>
+                    <select
+                    id="exampleFormControlSelect12"
+                    name="format"
+                    ngmodel=""
+                    class="form-control btn-square digits ng-untouched ng-pristine ng-valid"
+                    ng-reflect-name="format"
+                    ng-reflect-model="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group mb-0">
+                  <label for="exampleFormControlTextarea14"
+                    >Quote Instructions</label>
+                  <textarea
+                    id="exampleFormControlTextarea14"
+                    rows="3"
+                    placeholder="Quote Instructions"
+                    name="instruction"
+                    ngmodel=""
+                    class="form-control btn-square ng-untouched ng-pristine ng-valid"
+                    ng-reflect-name="instruction"
+                    ng-reflect-model="">
+                </textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group me-1">
+                  <div class="checkbox checkbox-dark m-squar pt-4">
+                    <input
+                      id="inline-sqr-1"
+                      type="checkbox"
+                      name="urgent"
+                      ngmodel=""
+                      ng-reflect-name="urgent"
+                      ng-reflect-model=""
+                      class="ng-untouched ng-pristine ng-valid"
+                    /><label for="inline-sqr-1" class="mt-0"
+                      >This Quote is Super Urgent</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <ngx-dropzone
+                  class="dropzone dropzone-secondary"
+                  _nghost-ng-c2040221903=""
+                  ng-reflect-multiple="true"
+                  ><input
+                    _ngcontent-ng-c2040221903=""
+                    type="file"
+                    id="undefined"
+                    multiple=""
+                    accept="*"
+                  /><ngx-dropzone-label class="ng-star-inserted"
+                    ><div class="dz-message needsclick">
+                      <i class="icon-cloud-up"></i>
+                      <h4 class="f-w-700">
+                        Drop files here or click to upload.
+                      </h4>
+                    </div></ngx-dropzone-label
+                  ><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-for-of": ""
+}--></ngx-dropzone
+                >
+              </div>
+            </div>
+          </div>
+          <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary me-1">Submit</button
+            ><input type="reset" value="Cancel" class="btn btn-light" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

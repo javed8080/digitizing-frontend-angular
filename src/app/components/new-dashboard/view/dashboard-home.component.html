@@ -1,0 +1,160 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-xl-3 col-lg-6">
+            <div class="card o-hidden">
+                <div class="bg-primary b-r-4 card-body">
+                    <div class="d-flex static-top-widget">
+                        <div class="align-self-center text-center">
+                            <app-feather-icons [icon]="'refresh-ccw'"></app-feather-icons>
+                        </div>
+                        <div class="flex-grow-1 mediaBody"><span class="m-0">Processing Orders</span>
+                            <h4 class="mb-0 counter">451</h4><i class="icon-bg" data-feather="refresh-ccw"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3 col-lg-6">
+            <div class="card o-hidden">
+                <div class="bg-primary b-r-4 card-body">
+                    <div class="d-flex static-top-widget">
+                        <div class="align-self-center text-center">
+                            <app-feather-icons [icon]="'navigation'"></app-feather-icons>
+                        </div>
+                        <div class="flex-grow-1 mediaBody"><span class="m-0">Digitizing</span>
+                            <h4 class="mb-0 counter">6659</h4><i class="icon-bg" data-feather="navigation"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3 col-lg-6">
+            <div class="card o-hidden">
+                <div class="bg-secondary b-r-4 card-body">
+                    <div class="d-flex static-top-widget">
+                        <div class="align-self-center text-center">
+                            <app-feather-icons [icon]="'box'"></app-feather-icons>
+                        </div>
+                        <div class="flex-grow-1 mediaBody"><span class="m-0">Vectors</span>
+                            <h4 class="mb-0 counter">98</h4>
+                            <i class="icon-bg" data-feather="box"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3 col-lg-6">
+            <div class="card o-hidden">
+                <div class="bg-primary b-r-4 card-body">
+                    <div class="d-flex static-top-widget">
+                        <div class="align-self-center text-center">
+                            <app-feather-icons [icon]="'message-square'"></app-feather-icons>
+                        </div>
+                        <div class="flex-grow-1 mediaBody"><span class="m-0">Custom Patch</span>
+                            <h4 class="mb-0 counter">893</h4><i class="icon-bg" data-feather="message-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-12">
+    <div class="container-fluid bg-white">
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h3 class="text-primary text-center">PROCESSING ORDERS & QUOTES</h3>
+            </div>
+    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedOption">
+              <option value="0">All Orders/ Quotes</option>
+              <option value="1">Digitizing Orders</option>
+              <option value="2">Digitizing Quotes</option>
+              <option value="3">Vector Orders</option>
+              <option value="4">Vector Quotes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br>
+
+        <div [ngSwitch]="selectedOption">
+          <ng-container *ngSwitchCase="'0'">
+            <div class="text-center text-primary">
+              <h3>All Orders/Quotes</h3>
+            </div>
+            <!-- <app-embroidery-list></app-embroidery-list> -->
+            <app-digitizing-order-records></app-digitizing-order-records>
+
+          </ng-container>
+          <ng-container *ngSwitchCase="'1'">
+            <div class="text-center text-primary">
+              <h3>Digitizing Orders</h3>
+            </div>
+            <app-digitizing-order-records></app-digitizing-order-records>
+          </ng-container>
+          <ng-container *ngSwitchCase="'2'">
+            <div class="text-center text-primary">
+              <h3>Digitizing Quotes</h3>
+            </div>
+            <app-digitizing-order-records></app-digitizing-order-records>
+
+          </ng-container>
+          <ng-container *ngSwitchCase="'3'">
+            <div class="text-center text-primary">
+              <h3>Vector Orders</h3>
+            </div>
+            <app-vector-order-records></app-vector-order-records>
+          </ng-container>
+          <ng-container *ngSwitchCase="'4'">
+            <div class="text-center text-primary">
+              <h3>Vector Quotes</h3>
+              <!-- <app-vector-list></app-vector-list> -->
+            <app-vector-order-records></app-vector-order-records>
+
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            <p>No option selected</p>
+          </ng-container>
+        </div>
+        <br>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Generate Invoices</h5>
+          </div>
+          <div class="modal-body bg-body-secondary">
+            <div [ngSwitch]="selectedOption">
+              <ng-container *ngSwitchCase="'0'">
+                <!-- <app-digitizing-order-records></app-digitizing-order-records> -->
+              </ng-container>
+              <ng-container *ngSwitchCase="'1'">
+
+              </ng-container>
+              <ng-container *ngSwitchCase="'2'">
+
+              </ng-container>
+              <ng-container *ngSwitchDefault>
+                <p>No option selected</p>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+            </div>
+        </div>
+    
+
+ </div>
+<br><br><br><br><br><br>
+ 
